@@ -21,6 +21,7 @@
                                 <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-search"></span></button>
                             </div>
                         </div>
+                        <a href="/report_data/data_pdf" class="btn btn-primary" target="_blank">CETAK PDF</a>
                     </form>
                    
                 </div>
@@ -51,7 +52,7 @@
                                     <td>{{$row->updated_at->format('d/m/Y')}}</td>
                                     <td>@if ($row->confirmed_III == 1)<button type="button" class="btn btn-primary">sukses</button>   
                                     @endif</td>
-                                    <td>{{$row->kd_petugas}}</td>
+                                    <td>{{$row->petugas->nama}}</td>
                                 </tr>
                             @endforeach
                         </tbody>
