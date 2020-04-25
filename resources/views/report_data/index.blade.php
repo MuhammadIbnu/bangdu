@@ -1,7 +1,7 @@
 @extends('layouts.template')
 
 @section('title')
-    Data AKtivitas Petugas
+   Report Data 
 @endsection
 @section('content')
     <div class="row">
@@ -21,7 +21,7 @@
                                 <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-search"></span></button>
                             </div>
                         </div>
-                        <a href="/report_data/data_pdf" class="btn btn-primary" target="_blank">CETAK PDF</a>
+                        <a href="cetak_pdf" class="btn btn-primary" target="_blank">CETAK PDF</a>
                     </form>
                    
                 </div>

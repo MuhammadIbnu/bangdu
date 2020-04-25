@@ -19,7 +19,7 @@
       </a>
     </li>
     <li>
-      <a href="{{route('report_data.index')}}">
+      <a href="{{route('report_data')}}">
         <i class="fa fa-th"></i> <span>report pengesahan data</span>
       </a>
     </li>

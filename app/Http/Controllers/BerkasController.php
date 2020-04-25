@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use PDF;
+use App\Data;
+use App\Waris;
 
 class BerkasController extends Controller
 {
@@ -10,14 +13,14 @@ class BerkasController extends Controller
     public function index()
     {
         //
-        $report = Data::orderBy('created_at','DESC')->paginate(20);
-        return view('report_data.index',compact('report'));
+        $report_data = Data::orderBy('updated_at','DESC')->paginate(20);
+        return view('report_data.index',compact('report_data'));
     }
 
-    public function pdf(){
-
-        $report_data = Data::orderBy('created_at','DESC')->where('confirmed_III', '1')->paginate(20);
-        $pdf = Data::loadview('data_pdf',['report_data'=>$report_data]);
+    public function cetak_pdf(){
+        $report_data = Data::orderBy('updated_at','DESC')->get();
+        $pdf =PDF::loadview('report_data.data_pdf',compact('report_data'));
         return $pdf->stream();
     }
+    
 }

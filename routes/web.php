@@ -37,8 +37,8 @@ Route::resource('bakuda', 'BakudaController')->except(['show']);
 //aktivitas
 Route::resource('aktivitas','AktivitasController');
 //report_berkas
-Route::resource('report_data', 'ReportBerkas');
+Route::get('report_data', 'BerkasController@index')->name('report_data');
 //pdf
-Route::get('cetak_pdf','BerkasController@pdf')->name('cetak_pdf');
+Route::get('cetak_pdf','BerkasController@cetak_pdf')->name('cetak_pdf');
 
 });
