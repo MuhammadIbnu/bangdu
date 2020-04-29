@@ -40,7 +40,9 @@ class LoginController extends Controller
             }
     
             return response()->json([
-                'message'=> "Login Gagal"
+                'status'=>false,
+                'message'=> "Login Gagal",
+                'data'=>(object) []
             ], 401);
     
        
