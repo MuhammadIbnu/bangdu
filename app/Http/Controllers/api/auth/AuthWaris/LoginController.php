@@ -35,7 +35,7 @@ class LoginController extends Controller
                 return response()->json([
                     'status' => true,
                     'message' => 'berhasil login',
-                    'data' => new WarisResource($user) 
+                    'data' => $user
                 ], 201);
             }
     

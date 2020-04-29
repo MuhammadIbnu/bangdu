@@ -17,9 +17,10 @@ class Waris extends Authenticatable
      */
 
      protected $guard ='waris';
-     protected $guarded = [];
-     
      protected $table = 'waris';
+     protected $primaryKey = 'id';
+     protected $guarded = [];
+    
     /**
      * The attributes that should be hidden for arrays.
      *
