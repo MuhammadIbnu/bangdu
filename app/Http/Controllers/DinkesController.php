@@ -18,8 +18,8 @@ class DinkesController extends Controller
     {
         //
         $dinkes = Dinkes::paginate(5);
-        $fillterKeyword = $request->get('keyword');
-        if($fillterKeyword){
+        $filterKeyword = $request->get('keyword');
+        if($filterKeyword){
             $dinkes= Dinkes::where('nama','LIKE',"%$filterKeyword%")->paginate(5);
         }
         return view('dinkes.index',compact('dinkes'));
