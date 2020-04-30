@@ -16,9 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('semua_berkas','Api\BerkasController@index');
-Route::post('aktivasi','Api\WarisController@aktivasi');
-Route::post('berkas','Api\BerkasController@berkas')->middleware('auth:api_waris');
+Route::get('semua_berkas','api\BerkasController@index');
+Route::post('aktivasi','api\WarisController@aktivasi');
+Route::post('berkas','api\BerkasController@berkas')->middleware('auth:api_waris');
 
 
 
