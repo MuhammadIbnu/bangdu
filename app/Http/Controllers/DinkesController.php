@@ -17,12 +17,12 @@ class DinkesController extends Controller
     public function index(Request $request)
     {
         //
-        // $dinkes = Dinkes::paginate(5);
-        // $fillterKeyword = $request->get('keyword');
-        // if($fillterKeyword){
-        //     $dinkes= Dinkes::where('nama','LIKE',"%$filterKeyword%")->paginate(5);
-        // }
-        return view('dinkes.index');
+        $dinkes = Dinkes::paginate(5);
+        $fillterKeyword = $request->get('keyword');
+        if($fillterKeyword){
+            $dinkes= Dinkes::where('nama','LIKE',"%$filterKeyword%")->paginate(5);
+        }
+        return view('dinkes.index',compact('dinkes'));
     }
 
     /**
