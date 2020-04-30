@@ -31,7 +31,7 @@ Route::resource('user', 'UserController');
 //petugas
 Route::resource('petugas', 'PetugasController')->except(['show']);
 //dinkes
-Route::resource('dinkes', 'dinkesController')->except(['show']);
+Route::resource('dinkes', 'DinkesController')->except(['show']);
 //bakuda
 Route::resource('bakuda', 'BakudaController')->except(['show']);
 //aktivitas
