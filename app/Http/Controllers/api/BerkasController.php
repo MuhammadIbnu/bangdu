@@ -17,6 +17,7 @@ class BerkasController extends Controller
         $data = Data::get();
         return BerkasResource::collection($data);
     }
+    
     public function berkas(Request $request){
 
         $rules = [

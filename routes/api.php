@@ -25,7 +25,7 @@ Route::post('berkas','Api\BerkasController@berkas')->middleware('auth:api_waris'
 Route::group(['prefix' => 'waris'], function () {
     Route::post('register', 'api\auth\AuthWaris\RegisterController@register');
     Route::post('login', 'api\auth\AuthWaris\LoginController@login');
-    Route::get('me','Api\warisController@me')->middleware('auth:api_waris');
+    Route::get('me','api\WarisController@me')->middleware('auth:api_waris');
 });
 Route::group(['prefix' => 'petugas'], function () {
     Route::post('login', 'api\auth\AuthPetugas\LoginController@login');

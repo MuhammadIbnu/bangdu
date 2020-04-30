@@ -16,7 +16,6 @@ class DinkesController extends Controller
      */
     public function index(Request $request)
     {
-        //
         $dinkes = Dinkes::paginate(5);
         $filterKeyword = $request->get('keyword');
         if($filterKeyword){
