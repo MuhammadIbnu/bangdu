@@ -35,7 +35,7 @@ Route::resource('dinkes', 'DinkesController')->except(['show']);
 //bakuda
 Route::resource('bakuda', 'BakudaController')->except(['show']);
 //aktivitas
-Route::resource('aktivitas','AktivitasController');
+Route::resource('Aktivitas','AktivitasController');
 //report_berkas
 Route::get('report_data', 'BerkasController@index')->name('report_data');
 //pdf
