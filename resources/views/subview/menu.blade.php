@@ -1,11 +1,11 @@
 <ul class="sidebar-menu" data-widget="tree">
     <li class="header">MAIN NAVIGATION</li>
+    <li>
+      <a href="{{route('home')}}">
+        <i class="fa fa-th"></i> <span>home</span>
+      </a>
+    </li>
     <li class="treeview">
-      <li>
-        <a href="{{route('home')}}">
-          <i class="fa fa-th"></i> <span>home</span>
-        </a>
-      </li>
       <a href="#">
         <i class="fa fa-dashboard"></i> <span>Kontrol Akun</span>
         <span class="pull-right-container">
