@@ -36,23 +36,22 @@
                                 <th>Nama pengaju</th>
                                 <th>Tanggal pengajuan</th>
                                 <th>Status berkas</th>
-                                <th>Petugas</th>
+                                {{-- <th>Petugas</th> --}}
                                 <th width="30%">action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($aktivitas as $row)
+                            @foreach ($aktivitasi as $row)
                                 <tr>
-                                    <td>{{$loop->iteration + ($aktivitas->perPage() *($aktivitas->currentPage()-1))}} </td>
+                                    <td>{{$loop->iteration + ($aktivitasi->perPage() *($aktivitasi->currentPage()-1))}} </td>
                                     <td>{{$row->waris->nama}}</td>
                                     <td>{{$row->created_at->format('d/m/Y')}}</td>
-                                    <td>@if ($row->confirmed_III === 1)
+                                    <td>@if ($row->confirmed_I === 1)
                                         <button type="button" class="btn btn-primary">sukses</button> 
-                                        @elseif($row->confirmed_III === null)
+                                        @elseif($row->confirmed_I === null)
                                         <button type="button" class="btn btn-warning">Sedang dievaluasi</button>  
                                         @else
                                         <button type="button" class="btn btn-danger">Sedang ditolak</button>
-                                        
                                     @endif</td>
                                     <td>{{$row->petugas->nama}}</td>
                                     <td>
@@ -62,7 +61,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    {{$aktivitas->appends(Request::All())->links()}}
+                    {{$aktivitasi->appends(Request::All())->links()}}
                 </div>
             </div>
         </div>
