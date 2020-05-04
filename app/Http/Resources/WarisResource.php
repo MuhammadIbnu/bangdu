@@ -19,7 +19,7 @@ class WarisResource extends JsonResource
             'id'=>$this->id,
             'nik'=>$this->nik,
             'kk'=>$this->kk,
-            'nam'=>$this->nama,
+            'nama'=>$this->nama,
             'jk'=>$this->jk,
             'joined'=>$this->created_at->diffForHumans(),
             'api_token'=> $this->api_token,

@@ -47,7 +47,7 @@ class BerkasController extends Controller
             # code...
             $gambar_berkas = $request->file('ktp_meninggal');
             $extention = $gambar_berkas->getClientOriginalExtension();
-            $namaFoto = "berkas/".date('YmdHis').".".$extention;
+            $namaFoto = "ktp_meninggal_".date('YmdHis').".".$extention;
             $upload_path='public/uploads/berkas';
             $request->file('ktp_meninggal')->move($upload_path,$namaFoto);
             $data->ktp_meninggal=$namaFoto;
@@ -57,7 +57,7 @@ class BerkasController extends Controller
             # code...
             $gambar_berkas = $request->file('kk_meninggal');
             $extention = $gambar_berkas->getClientOriginalExtension();
-            $namaFoto = "berkas/".date('YmdHis').".".$extention;
+            $namaFoto = "kk_meninggal_".date('YmdHis').".".$extention;
             $upload_path='public/uploads/berkas';
             $request->file('kk_meninggal')->move($upload_path,$namaFoto);
             $data->kk_meninggal=$namaFoto;
@@ -67,7 +67,7 @@ class BerkasController extends Controller
             # code...
             $gambar_berkas = $request->file('jamkesmas');
             $extention = $gambar_berkas->getClientOriginalExtension();
-            $namaFoto = "berkas/".date('YmdHis').".".$extention;
+            $namaFoto = "jamkesmas_".date('YmdHis').".".$extention;
             $upload_path='public/uploads/berkas';
             $request->file('jamkesmas')->move($upload_path,$namaFoto);
             $data->jamkesmas=$namaFoto;
@@ -77,7 +77,7 @@ class BerkasController extends Controller
             # code...
             $gambar_berkas = $request->file('ktp_waris');
             $extention = $gambar_berkas->getClientOriginalExtension();
-            $namaFoto = "berkas/".date('YmdHis').".".$extention;
+            $namaFoto = "ktp_waris_".date('YmdHis').".".$extention;
             $upload_path='public/uploads/berkas';
             $request->file('ktp_waris')->move($upload_path,$namaFoto);
             $data->ktp_waris=$namaFoto;
@@ -87,7 +87,7 @@ class BerkasController extends Controller
             # code...
             $gambar_berkas = $request->file('kk_waris');
             $extention = $gambar_berkas->getClientOriginalExtension();
-            $namaFoto = "berkas/".date('YmdHis').".".$extention;
+            $namaFoto = "kk_waris_".date('YmdHis').".".$extention;
             $upload_path='public/uploads/berkas';
             $request->file('kk_waris')->move($upload_path,$namaFoto);
             $data->kk_waris=$namaFoto;
@@ -97,7 +97,7 @@ class BerkasController extends Controller
             # code...
             $gambar_berkas = $request->file('akta_kematian');
             $extention = $gambar_berkas->getClientOriginalExtension();
-            $namaFoto = "berkas/".date('YmdHis').".".$extention;
+            $namaFoto = "akta_kematian_".date('YmdHis').".".$extention;
             $upload_path='public/uploads/berkas';
             $request->file('akta_kematian')->move($upload_path,$namaFoto);
             $data->akta_kematian=$namaFoto;
@@ -107,7 +107,7 @@ class BerkasController extends Controller
             # code...
             $gambar_berkas = $request->file('pernyataan_ahli_waris');
             $extention = $gambar_berkas->getClientOriginalExtension();
-            $namaFoto = "berkas/".date('YmdHis').".".$extention;
+            $namaFoto = "pernyataan_ahli_waris_".date('YmdHis').".".$extention;
             $upload_path='public/uploads/berkas';
             $request->file('pernyataan_ahli_waris')->move($upload_path,$namaFoto);
             $data->pernyataan_ahli_waris=$namaFoto;
@@ -117,13 +117,13 @@ class BerkasController extends Controller
             # code...
             $gambar_berkas = $request->file('pakta_waris');
             $extention = $gambar_berkas->getClientOriginalExtension();
-            $namaFoto = "berkas/".date('YmdHis').".".$extention;
+            $namaFoto = "pakta_waris_waris_".date('YmdHis').".".$extention;
             $upload_path='public/uploads/berkas';
             $request->file('pakta_waris')->move($upload_path,$namaFoto);
             $data->pakta_waris=$namaFoto;
         }
         $data->save();
-        return new BerkasResource($data);
+        return $data;
      }
 
      public function confirmed_I(Request $request, $data){

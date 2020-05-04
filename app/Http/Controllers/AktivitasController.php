@@ -15,12 +15,12 @@ class AktivitasController extends Controller
      */
     public function index(Request $request)
     {
-        $aktivitasi = Data::where('confirmed_I', '1')->paginate(20);
+        $aktivitas = Data::where('confirmed_I', '1')->paginate(20);
         $filterKeyword = $request->get('keyword');
-        $aktivitasi = Data::whereHas('waris', function($query) use($filterKeyword){
+        $aktivitas = Data::whereHas('waris', function($query) use($filterKeyword){
             $query->where('nama','like',"%$filterKeyword%")->where('confirmed_I', '1');
         })->paginate(20);
-        return view('aktivitas.index',compact('aktivitasi'));
+        return view('aktivitas.index',compact('aktivitas'));
     }
 
     /**

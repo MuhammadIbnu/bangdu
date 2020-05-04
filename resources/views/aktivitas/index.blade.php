@@ -41,9 +41,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($aktivitasi as $row)
+                            @foreach ($aktivitas as $row)
                                 <tr>
-                                    <td>{{$loop->iteration + ($aktivitasi->perPage() *($aktivitasi->currentPage()-1))}} </td>
+                                    <td>{{$loop->iteration + ($aktivitas->perPage() *($aktivitas->currentPage()-1))}} </td>
                                     <td>{{$row->waris->nama}}</td>
                                     <td>{{$row->created_at->format('d/m/Y')}}</td>
                                     <td>@if ($row->confirmed_I === 1)
@@ -53,7 +53,7 @@
                                         @else
                                         <button type="button" class="btn btn-danger">Sedang ditolak</button>
                                     @endif</td>
-                                    <td>{{$row->petugas->nama}}</td>
+                                    {{-- <td>{{$row->petugas->nama}}</td> --}}
                                     <td>
                                         <a href="{{route('aktivitas.show',[$row->kd_berkas])}}" class="btn btn-info">Detail</a>
                                     </td>
@@ -61,7 +61,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    {{$aktivitasi->appends(Request::All())->links()}}
+                    {{$aktivitas->appends(Request::All())->links()}}
                 </div>
             </div>
         </div>
