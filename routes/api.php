@@ -30,11 +30,13 @@ Route::group(['prefix' => 'waris'], function () {
 Route::group(['prefix' => 'petugas'], function () {
     Route::post('login', 'api\auth\AuthPetugas\LoginController@login');
     Route::get('berkasBaru', 'api\BerkasController@dataMasuk')->middleware('auth:api_petugas');
+    Route::get('dataconfirmedII','api\BerkasController@dataConfirmedII')->middleware('auth:api_petugas');
     Route::post('berkas/{data}', 'api\BerkasController@confirmed_I')->middleware('auth:api_petugas');
     Route::post('acc/{data}', 'api\BerkasController@confirmed_III')->middleware('auth:api_petugas');
     
 });
 Route::group(['prefix' => 'dinkes'], function () {
     Route::post('login', 'api\auth\AuthDinkes\LoginController@login');
+    Route::get('dataconfirmedI','api\BerkasController@dataConfirmedI')->middleware('auth:api_dinkes');
     Route::post('berkas/{data}', 'api\BerkasController@confirmed_II')->middleware('auth:api_dinkes');
 });
