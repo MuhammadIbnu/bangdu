@@ -123,7 +123,11 @@ class BerkasController extends Controller
             $data->pakta_waris=$namaFoto;
         }
         $data->save();
-        return $data;
+        return response()->json([
+            'status'=>true,
+            'message'=>'berhasil',
+            'data'=> new BerkasResource($data)
+        ], 200);
      }
 
      public function confirmed_I(Request $request, $data){
