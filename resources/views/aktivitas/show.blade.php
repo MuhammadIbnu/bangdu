@@ -39,56 +39,56 @@
                                 <div class="row">
                                         <div class="col-md-4">
                                             <div class="thumbnail">
-                                                <a href="{{asset('public/uploads/'.$aktivitas->ktp_meninggal)}}" target="_blank">
-                                                <img src="{{asset('public/uploads/'.$aktivitas->ktp_meninggal)}}" alt="Lights" style="width:100%">
+                                                <a href="{{asset('public/'.$aktivitas->ktp_meninggal)}}" target="_blank">
+                                                <img src="{{asset('public/'.$aktivitas->ktp_meninggal)}}" alt="Lights" style="width:100%">
                                                 </a>
                                             </div>
                                         </div>
 
                                         <div class="col-md-4">
                                             <div class="thumbnail">
-                                                <a href="{{asset('public/uploads/'.$aktivitas->kk_meninggal)}}" target="_blank">
-                                                    <img src="{{asset('public/uploads/'.$aktivitas->kk_meninggal)}}" alt="Nature" style="width:100%">
+                                                <a href="{{asset('public/'.$aktivitas->kk_meninggal)}}" target="_blank">
+                                                    <img src="{{asset('public/'.$aktivitas->kk_meninggal)}}" alt="Nature" style="width:100%">
                                                 </a>
                                             </div>
                                         </div>
 
                                         <div class="col-md-4">
                                             <div class="thumbnail">
-                                                <a href="{{asset('public/uploads/'.$aktivitas->jamkesmas)}}" target="_blank">
-                                                    <img src="{{asset('public/uploads/'.$aktivitas->jamkesmas)}}" alt="Fjords" style="width:100%">
+                                                <a href="{{asset('public/'.$aktivitas->jamkesmas)}}" target="_blank">
+                                                    <img src="{{asset('public/'.$aktivitas->jamkesmas)}}" alt="Fjords" style="width:100%">
                                                 </a>
                                             </div>
                                         </div>
 
                                         <div class="col-md-4">
                                             <div class="thumbnail">
-                                            <a href="{{asset('public/uploads/'.$aktivitas->ktp_waris)}}" target="_blank">
-                                                <img src="{{asset('public/uploads/'.$aktivitas->ktp_waris)}}" alt="Fjords" style="width:100%">
+                                            <a href="{{asset('public/'.$aktivitas->ktp_waris)}}" target="_blank">
+                                                <img src="{{asset('public/'.$aktivitas->ktp_waris)}}" alt="Fjords" style="width:100%">
                                             </a>
                                             </div>
                                         </div>
 
                                         <div class="col-md-4">
                                             <div class="thumbnail">
-                                            <a href="{{asset('public/uploads/'.$aktivitas->kk_waris)}}" target="_blank">
-                                                <img src="{{asset('public/uploads/'.$aktivitas->kk_waris)}}" alt="Lights" style="width:100%">
+                                            <a href="{{asset('public/'.$aktivitas->kk_waris)}}" target="_blank">
+                                                <img src="{{asset('public/'.$aktivitas->kk_waris)}}" alt="Lights" style="width:100%">
                                             </a>
                                             </div>
                                         </div>
 
                                         <div class="col-md-4">
                                             <div class="thumbnail">
-                                                <a href="{{asset('public/uploads/'.$aktivitas->akta_kematian)}}" target="_blank">
-                                                    <img src="{{asset('public/uploads/'.$aktivitas->akta_kematian)}}" alt="Nature" style="width:100%">
+                                                <a href="{{asset('public/'.$aktivitas->akta_kematian)}}" target="_blank">
+                                                    <img src="{{asset('public/'.$aktivitas->akta_kematian)}}" alt="Nature" style="width:100%">
                                                 </a>
                                             </div>
                                         </div>
 
                                         <div class="col-md-4">
                                             <div class="thumbnail">
-                                                <a href="{{asset('public/uploads/'.$aktivitas->pakta_waris)}}" target="_blank">
-                                                    <img src="{{asset('public/uploads/'.$aktivitas->pakta_waris)}}" alt="Nature" style="width:100%">
+                                                <a href="{{asset('public/'.$aktivitas->pakta_waris)}}" target="_blank">
+                                                    <img src="{{asset('public/'.$aktivitas->pakta_waris)}}" alt="Nature" style="width:100%">
                                                 </a>
                                             </div>
                                         </div>
