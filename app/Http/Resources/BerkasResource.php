@@ -18,7 +18,6 @@ class BerkasResource extends JsonResource
             'kd_berkas' => $this->kd_berkas,
             'petugas'=>  $this->petugas ? ['username'=> $this->petugas->username,'nama'=> $this->petugas->nama] : (object)[],
             'dinkes'=> $this->dinkes ? ['username'=>$this->dinkes->username,'nama'=> $this->dinkes->nama] : (object) [],
-            
             'waris' => [
                     'nik' => $this->waris->nik,
                     'kk' => $this->waris->kk,
@@ -38,6 +37,7 @@ class BerkasResource extends JsonResource
             'kk_waris' => $this->kk_waris,
             'akta_kematian' => $this->akta_kematian,
             'pakta_waris' => $this->pakta_waris,
+            'pernyataan_waris'=>$this->pernyataan_ahli_waris,
             'keterangan' => $this->keterangan,
             'confirmed_I'=> $this->confirmed_I,
             'confirmed_II'=> $this->confirmed_II,

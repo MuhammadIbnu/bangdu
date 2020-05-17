@@ -30,12 +30,12 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <label for="password" class="col-sm-2 control-label">Password</label>
                                 <div class="col-sm-10">
                                     <input type="text" placeholder="Tulis Password" class="form-control" id="password" name="password" value="">
                                 </div>
-                            </div>
+                            </div> --}}
 
                            
                         </div>

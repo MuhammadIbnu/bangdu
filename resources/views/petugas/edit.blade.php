@@ -1,6 +1,6 @@
 @extends('layouts.template')
 @section('title')
-    Edit data Petugas dinas Kesehatan
+    Edit data Petugas Disdukcapil
     
 @endsection
 
@@ -36,6 +36,7 @@
                                     <input type="text" class="form-control" id="password" name="password" value="">
                                 </div>
                             </div>
+
                         </div>
                         <div class="box-footer">
                             <button type="submit" name="tombol" class="btn btn-info pull-right">Update</button>

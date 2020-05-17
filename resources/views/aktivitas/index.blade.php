@@ -53,7 +53,7 @@
                                         @else
                                         <button type="button" class="btn btn-danger">Sedang ditolak</button>
                                     @endif</td>
-                                    {{-- <td>{{$row->petugas->nama}}</td> --}}
+                                    <td>{{$row->petugas->nama}}</td>
                                     <td>
                                         <a href="{{route('aktivitas.show',[$row->kd_berkas])}}" class="btn btn-info">Detail</a>
                                     </td>

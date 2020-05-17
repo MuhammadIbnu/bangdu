@@ -30,6 +30,8 @@ class HomeController extends Controller
         $data = Data::count();
         $petugas = Petugas::count();
         $dinkes = Dinkes::count();
-        return view('home',compact('waris','data','petugas','dinkes'));
+        $data_masuk = Data::orderBy('created_at','DESC')->paginate(5);
+        $aktivasi_baru = Waris::orderBy('created_at','DESC')->paginate(5);
+        return view('home',compact('waris','data','petugas','dinkes','data_masuk','aktivasi_baru'));
     }
 }

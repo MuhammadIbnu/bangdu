@@ -52,18 +52,16 @@ class PetugasController extends Controller
        $this->Validate($request,[
             'username'=>'required|max:100|',
             'nama'=>'required|max:255',
-            'password'=>'required|min:6|max:50'
-            
         ]);
         
         $petugas = new Petugas();
         $petugas->username = $request->username;
         $petugas->nama = $request->nama;
-        $petugas->password = \Hash::make($request->password);
+        $petugas->password = \Hash::make($request->username);
         $petugas->api_token = Str::random(80);
         $petugas->save();
         
-         return redirect()->route('petugas.index')->with('status','petugas berhasil ditambah');
+         return redirect()->route('petugas.index')->with('status','petugas berhasil ditambah, password default username');
     }
 
     /**
@@ -105,17 +103,16 @@ class PetugasController extends Controller
 
         $validasi = Validator::make($data,[
             'nama' => 'required|max:255',
-            'password'=>'required|nullable|max:50'
+            'password'=>'required|max:255'
         ]);
         if ($validasi->fails()) {
             # code...
             return redirect()->route('petugas.edit')->withErrors($validasi);
-
         }
         if ($request->input('password')) {
             # code...
             $data['password']=password_hash($request->input('password'),PASSWORD_DEFAULT);
-        }else {
+        } else {
             # code...
             $data=Arr::except($data['password']);
         }

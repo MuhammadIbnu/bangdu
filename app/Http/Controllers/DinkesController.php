@@ -45,19 +45,18 @@ class DinkesController extends Controller
     {
         //
         $this->validate($request,[
-            'username'=>'required|max:100|unique:dinkes',
+            'username'=>'required|min:6|max:100|unique:dinkes',
             'nama'=>'required|max:255',
-            'password'=>'required|min:6|max:50',
             'api_token'=>'max|80'
         ]);
             $petugas = new Dinkes();
             $petugas->username = $request->username;
             $petugas->nama = $request->nama;
-            $petugas->password = \Hash::make($request->password);
+            $petugas->password = \Hash::make($request->username);
             $petugas->api_token = Str::random(80);
             $petugas->save();
         
-            return redirect()->route('dinkes.index')->with('status','berhasil menambahkan akun petugas dinkes');
+            return redirect()->route('dinkes.index')->with('status','petugas dinkes berhasil ditambah, password default username');
     }
 
     /**
@@ -99,7 +98,7 @@ class DinkesController extends Controller
         
         $validasi= Validator::make($data,[
             'nama'=>'required|max:255',
-            'password'=>'required|nullable|max:50'
+            'password'=>'required|max:255'
         ]);
 
         if ($validasi->fails()) {

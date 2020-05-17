@@ -44,4 +44,9 @@ class Waris extends Authenticatable
     {
         return $this->belongsTo('App\Data', 'kd_waris', 'id');
     }
+
+    public function survey()
+    {
+        return $this->belongsTo('App\Survey', 'kd_waris', 'id');
+    }
 }

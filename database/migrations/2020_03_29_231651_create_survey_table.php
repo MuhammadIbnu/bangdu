@@ -13,7 +13,7 @@ class CreateSurveyTable extends Migration
      */
     public function up()
     {
-        Schema::create('survey', function (Blueprint $table) {
+        Schema::create('surveys', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('kd_waris');
             $table->smallInteger('nilai');

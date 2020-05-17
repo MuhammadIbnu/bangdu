@@ -7,7 +7,6 @@
     <div class="col-md-12">
         <div class="box">
             <div class="box-header with-border">
-
             </div>
             <div class="box-body">
                 <div class="row">
@@ -72,6 +71,66 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="box">
+      <div class="box-header with-border">
+             <h3>Data baru</h3>         
+      </div>
+      <div class="box-body">
+        <table class="table table-bordered">
+          <thead>
+              <tr>
+                  <th width="5%">No</th>
+                  <th>Nama pengaju</th>
+                  <th>Tanggal pengajuan</th>
+              </tr>
+          </thead>
+          <tbody>
+              @foreach ($data_masuk as $row)
+                  <tr>
+                      <td>{{$loop->iteration + ($data_masuk->perPage() *($data_masuk->currentPage()-1))}} </td>
+                      <td>{{$row->waris->nama}}</td>
+                      <td>{{$row->created_at->format('d/m/Y')}}</td>
+                  </tr>
+              @endforeach
+          </tbody>
+      </table>
+      {{$data_masuk->appends(Request::All())->links()}}
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="box">
+      <div class="box-header with-border">
+             <h3>Aktivasi Ahli Waris</h3>         
+      </div>
+      <div class="box-body">
+        <table class="table table-bordered">
+          <thead>
+              <tr>
+                  <th width="5%">No</th>
+                  <th>Nama </th>
+                  <th>Tanggal Aktivasi</th>
+              </tr>
+          </thead>
+          <tbody>
+              @foreach ($aktivasi_baru as $row)
+                  <tr>
+                      <td>{{$loop->iteration + ($aktivasi_baru->perPage() *($aktivasi_baru->currentPage()-1))}} </td>
+                      <td>{{$row->nama}}</td>
+                      <td>{{$row->created_at->format('d/m/Y H:i:s')}}</td>
+                  </tr>
+              @endforeach
+          </tbody>
+      </table>
+      {{$aktivasi_baru->appends(Request::All())->links()}}
+      </div>
+    </div>
+  </div>
 </div>
     
 @endsection

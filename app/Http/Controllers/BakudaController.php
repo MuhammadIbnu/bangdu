@@ -87,7 +87,7 @@ class BakudaController extends Controller
     {
         //
         $bakuda= Bakuda::findOrfail($id);
-        return view('bakuda.edit',('bakuda'));
+        return view('bakuda.edit',compact('bakuda'));
     }
 
     /**
@@ -100,12 +100,13 @@ class BakudaController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $bakuda = Bakuda::findOrfail($id);
+        //
+        $bakuda= Bakuda::findOrfail($id);
         $data = $request->all();
 
         $validasi = Validator::make($data,[
-            'nama'=>'required|max:255',
-            'password'=>'required|nullable|max:50'
+            'nama' => 'required|max:255',
+            'password'=>'required|max:255'
         ]);
         if ($validasi->fails()) {
             # code...
@@ -114,12 +115,12 @@ class BakudaController extends Controller
         if ($request->input('password')) {
             # code...
             $data['password']=password_hash($request->input('password'),PASSWORD_DEFAULT);
-        }else {
-            
+        } else {
+            # code...
             $data=Arr::except($data['password']);
         }
-        $bakuda->update($data);
-        return redirect()->route('bakuda.index')->with('status','data petugas bakuda berhasil diubah');
+        $petugas->update($data);
+        return redirect()->route('bakuda.index')->with('status','petugas berhasil di edit');
     }
 
     /**
