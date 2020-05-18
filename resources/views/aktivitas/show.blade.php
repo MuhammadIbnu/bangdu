@@ -98,9 +98,9 @@
                         <tr>
                             <td>pengecekan Data Masuk</td>
                             <td>:</td>
-                            <td>@if ($aktivitas->confirmed_I === 1)<button type="button" class="btn btn-primary"> Sukses </button> 
+                            <td>@if ($aktivitas->confirmed_I === true)<button type="button" class="btn btn-primary"> Sukses </button> 
                                 @elseif($aktivitas->confirmed_I === null)<button type="button" class="btn btn-warning"> sedang divalidasi </button>
-                                @else <button type="button" class="btn btn-danger"> Belum </button>  
+                                @else <button type="button" class="btn btn-danger"> gagal </button>  
                                 @endif</td>
                         </tr>
                         <tr>
