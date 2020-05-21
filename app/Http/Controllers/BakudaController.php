@@ -119,7 +119,7 @@ class BakudaController extends Controller
             # code...
             $data=Arr::except($data['password']);
         }
-        $petugas->update($data);
+        $bakuda->update($data);
         return redirect()->route('bakuda.index')->with('status','petugas berhasil di edit');
     }
 
