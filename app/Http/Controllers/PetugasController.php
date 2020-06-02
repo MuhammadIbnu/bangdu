@@ -133,4 +133,12 @@ class PetugasController extends Controller
         $data->delete();
         return redirect()->route('petugas.index')->with('status','akun petugas berhasil di hapus');
     }
+    
+    public function reset(Petugas $petugas)
+    {
+        $petugas->password = bcrypt($petugas->username);
+        $petugas->update();
+        return redirect()->route('petugas.index')->with('status','akun petugas berhasil di reset');
+
+    }
 }

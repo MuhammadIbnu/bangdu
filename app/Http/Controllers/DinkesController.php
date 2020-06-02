@@ -130,4 +130,10 @@ class DinkesController extends Controller
         $data->delete();
         return redirect()->route('dinkes.index')->with('status','akum berhasil di hapus');
     }
+
+    public function reset(Dinkes $dinkes){
+        $dinkes->password = bcrypt($dinkes->username);
+        $dinkes->update();
+        return redirect()->route('dinkes.index')->with('status','akun dinkes berhasil direset');
+    }
 }

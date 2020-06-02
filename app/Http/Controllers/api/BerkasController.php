@@ -131,9 +131,11 @@ class BerkasController extends Controller
      }
 
      public function confirmed_I(Request $request, $data){
+       
         $data = Data::where('kd_berkas', $data)->first();
         $data->kd_petugas = Auth::user()->id;
         $data->confirmed_I = $request->confirmed_I;
+        $data->keterangan = $request->keterangan;
         $data->update();
             # code...
             return response()->json([
@@ -147,6 +149,7 @@ class BerkasController extends Controller
          $data = Data::where('kd_berkas', $data)->first();
          $data->kd_dinkes =  Auth::user()->id;
          $data->confirmed_II = $request->confirmed_II;
+         $data->keterangan_II = $request->keterangan_II;
          $data->update();
 
          return response()->json([
@@ -160,6 +163,7 @@ class BerkasController extends Controller
         $data = Data::where('kd_berkas', $data)->first();
         $data->kd_petugas = Auth::user()->id;
         $data->confirmed_III = $request->confirmed_III;
+        $data->keterangan_III = $request->keterangan_III;
         $data->update();
             # code...
             return response()->json([
@@ -169,7 +173,7 @@ class BerkasController extends Controller
             ],200);        
      }
 
-     #melihat data
+     #melihat data baru
 
      public function dataMasuk(){
         $data = Data::where('confirmed_I')->get();
@@ -185,7 +189,7 @@ class BerkasController extends Controller
             'data'=> (object) []
         ], 401);
      }
-     #data confirmed I nilai true
+     #melihat data confirmed I nilai true
      public function dataConfirmedI(){
         $data = Data::where('confirmed_I','1')->get();
         return response()->json([
@@ -201,7 +205,7 @@ class BerkasController extends Controller
         ], 401);
      }
 
-     #data confirmed II nilai true
+     #melihat data confirmed II nilai true
      public function dataConfirmedII(){
          $data = Data::where('confirmed_II','1')->get();
          return response()->json([
@@ -217,7 +221,7 @@ class BerkasController extends Controller
         ], 401);
      }
 
-     #data confrimed III nilai true
+     #melihat data confrimed III nilai true
      public function dataConfirmedIII(){
         $data = Data::where('confirmed_III','1')->get();
         return response()->json([

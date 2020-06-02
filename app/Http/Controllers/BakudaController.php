@@ -136,4 +136,10 @@ class BakudaController extends Controller
         $data->delete();
         return redirect()->route('bakuda.index')->with('status','akun berhasil dihapus');
     }
+
+    public function reset(Bakuda $bakuda){
+        $bakuda->password = bcrypt($bakuda->username);
+        $bakuda->update();
+        return redirect()->route('bakuda.index')->with('status','akun dinkes berhasil direset');
+    }
 }

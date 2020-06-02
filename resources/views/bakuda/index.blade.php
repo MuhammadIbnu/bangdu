@@ -50,6 +50,7 @@
                                             @csrf
                                             {{method_field('DELETE')}}
                                             <a href="{{route('bakuda.edit',[$row->id])}}" class="btn btn-warning">Edit</a>
+                                            <a href="{{route('bakuda.reset',[$row->id])}}" onclick="return confirm('apakah anda yakin akan RESET data ini?')" class="btn btn-warning" >reset</a>
                                             <button type="submit" class="btn btn-danger">Delete</button>
                                         </form>
                                     </td>

@@ -30,10 +30,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('user', 'UserController');
 //petugas
 Route::resource('petugas', 'PetugasController')->except(['show']);
+Route::get('petugas/{petugas}','PetugasController@reset')->name('petugas.reset');
 //dinkes
 Route::resource('dinkes', 'DinkesController')->except(['show']);
+Route::get('dinkes/{dinkes}','DinkesController@reset')->name('dinkes.reset');
 //bakuda
 Route::resource('bakuda', 'BakudaController')->except(['show']);
+Route::get('Bakuda/{bakuda}','BakudaController@reset')->name('bakuda.reset');
 //aktivitas
 Route::resource('aktivitas','AktivitasController');
 //report_berkas

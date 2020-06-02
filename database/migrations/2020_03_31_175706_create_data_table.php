@@ -30,6 +30,8 @@ class CreateDataTable extends Migration
             $table->boolean('confirmed_II')->nullable();
             $table->boolean('confirmed_III')->nullable();
             $table->text('keterangan')->nullable();
+            $table->text('keterangan_II')->nullable();
+            $table->text('keterangan_III')->nullable();
             $table->foreign('kd_petugas')->references('id')->on('petugas')->onDelete('cascade');
             $table->foreign('kd_dinkes')->references('id')->on('dinkes')->onDelete('cascade');
             $table->foreign('kd_waris')->references('id')->on('waris')->onDelete('cascade');
